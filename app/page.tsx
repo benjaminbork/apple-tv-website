@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <div>Hero component</div>
+        <div className=" h-[300vh]">Hero component</div>
         <div>usps</div>
         <div>3 col layout</div>
         <div> Carousel with posters</div>
