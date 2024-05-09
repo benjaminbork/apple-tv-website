@@ -29,7 +29,7 @@ const Hero = () => {
   }, [controls, heroTextInView]);
 
   return (
-    <div className="relative h-[300vh] bg-background text-white">
+    <div className="relative">
       <motion.div
         style={{ opacity }}
         className="absolute -top-[--header-height] left-0 w-full h-[200vh]"
@@ -50,12 +50,10 @@ const Hero = () => {
           variants={{
             hidden: {
               opacity: 0,
-              y: 20,
             },
 
             visible: {
               opacity: 1,
-              y: 20,
             },
           }}
           whileInView="visible"
