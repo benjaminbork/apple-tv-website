@@ -3,10 +3,11 @@ import { twMerge } from "tailwind-merge";
 
 interface ButtonProps {
   children: React.ReactNode;
+  className?: string;
   size?: "small" | "medium" | "large";
 }
 
-const Button = ({ children, size = "medium" }: ButtonProps) => {
+const Button = ({ children, size = "medium", className }: ButtonProps) => {
   const sizeClassNames = {
     // 12px
     small: "text-xs px-2 py-1",
@@ -20,7 +21,8 @@ const Button = ({ children, size = "medium" }: ButtonProps) => {
     <button
       className={twMerge(
         "bg-white text-textBlack rounded-full",
-        sizeClassNames[size]
+        sizeClassNames[size],
+        className
       )}
     >
       {children}

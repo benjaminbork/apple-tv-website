@@ -1,5 +1,7 @@
+import Button from "@/components/button";
 import Container from "@/components/container";
 import Header from "@/components/header";
+import Hero from "@/components/section/hero";
 import Image from "next/image";
 
 export default function Home() {
@@ -7,9 +9,7 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <div className=" h-[300vh]">
-          <Container>Hero component</Container>
-        </div>
+        <Hero />
         <div>
           <Container>usps component</Container>
         </div>
