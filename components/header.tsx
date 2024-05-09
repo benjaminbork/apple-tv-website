@@ -1,5 +1,6 @@
 import React from "react";
 import Container from "./container";
+import Button from "./button";
 
 const Header = () => {
   return (
@@ -12,7 +13,10 @@ const Header = () => {
         </Container>
       </header>
       <div className="sticky top-0 bg-backgroundContrast text-white ">
-        <Container className="flex items-center min-h-11">Apple TV+</Container>
+        <Container className="flex items-center min-h-11 justify-between">
+          <p>Apple TV+</p>
+          <Button size="small">Stream now</Button>
+        </Container>
       </div>
     </>
   );
