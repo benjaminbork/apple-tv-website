@@ -1,3 +1,4 @@
+import Container from "@/components/container";
 import Header from "@/components/header";
 import Image from "next/image";
 
@@ -6,10 +7,20 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <div className=" h-[300vh]">Hero component</div>
-        <div>usps</div>
-        <div>3 col layout</div>
-        <div> Carousel with posters</div>
+        <div className=" h-[300vh]">
+          <Container>Hero component</Container>
+        </div>
+        <div>
+          <Container>usps component</Container>
+        </div>
+
+        <div>
+          <Container>3 col layout component</Container>
+        </div>
+
+        <div>
+          <Container>Carousel with posters component</Container>
+        </div>
       </main>
     </>
   );
