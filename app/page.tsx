@@ -3,6 +3,7 @@ import Container from "@/components/container";
 import Header from "@/components/header";
 import Hero from "@/components/section/hero";
 import Usps from "@/components/section/usps";
+import { VideoCarousel } from "@/components/video-carousel";
 
 export default function Home() {
   return (
@@ -13,13 +14,9 @@ export default function Home() {
           <Hero />
           <Usps />
         </div>
-        <div>
-          <Container>3 col layout component</Container>
-        </div>
 
-        <div>
-          <Container>Carousel with posters component</Container>
-        </div>
+        <VideoCarousel />
+        <div className="h-[300vh]" />
       </main>
     </>
   );

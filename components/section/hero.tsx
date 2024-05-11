@@ -1,10 +1,9 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import Container from "../container";
 import Button from "../button";
 import Image from "next/image";
-import { useScroll, useTransform, motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useScroll, useTransform, motion } from "framer-motion";
 
 const Hero = () => {
   const videoContainerRef = useRef<HTMLDivElement>(null);
@@ -13,20 +12,6 @@ const Hero = () => {
     offset: ["start start", "end end"],
   });
   const opacity = useTransform(scrollYProgress, [0, 0.7, 1], [1, 1, 0]);
-
-  const controls = useAnimation();
-
-  const [heroTextRef, heroTextInView] = useInView({
-    threshold: 0.9,
-  });
-
-  useEffect(() => {
-    if (heroTextInView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [controls, heroTextInView]);
 
   return (
     <div className="relative">
@@ -45,7 +30,6 @@ const Hero = () => {
       </motion.div>
       <Container className="relative z-10 h-[--hero-height] pb-7">
         <motion.div
-          ref={heroTextRef}
           className="flex flex-col items-start justify-end h-full"
           variants={{
             hidden: {
@@ -57,7 +41,9 @@ const Hero = () => {
             },
           }}
           whileInView="visible"
-          animate={controls}
+          exit="hidden"
+          animate="hidden"
+          viewport={{ amount: 0.98 }}
         >
           <h1 className="text-5xl font-bold mb-10">
             All Apple Originals. <br /> Only on Apple TV+
