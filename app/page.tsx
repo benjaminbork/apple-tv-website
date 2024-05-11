@@ -10,11 +10,10 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <div className="bg-background text-white">
+        <div className="bg-background relative z-10">
           <Hero />
           <Usps />
         </div>
-
         <VideoCarousel />
         <div className="h-[300vh]" />
       </main>
