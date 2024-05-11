@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <div className="bg-background relative z-10">
+        <div className="bg-background relative z-10 text-white">
           <Hero />
           <Usps />
         </div>
